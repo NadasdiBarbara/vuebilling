@@ -1,16 +1,15 @@
 <template>
   <div id="app">
-    
+    <Table :rows="rows" />
   </div>
 </template>
 
 <script>
-
-
+import Table from './components/Table.vue'
 export default {
   name: 'App',
   components: {
-    
+    Table
   },
   data() {
     return {
@@ -36,6 +35,23 @@ export default {
           quantity: 321
         },
       ]
+    }
+  },
+  methods:{
+    Changed(e){
+      this.rows.map(function(row){
+        if (row.title != e.original) {
+          return row
+        }
+        row.title = e.new.title
+        return row
+      })
+    },
+    Post(e){
+      this.rows.push(e.new)
+    },
+    Torles(e){
+      this.rows.splice(this.rows.indexOf(e.original), 1);
     }
   }
 }
