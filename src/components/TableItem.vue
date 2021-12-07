@@ -3,21 +3,25 @@
       <td v-if="!edit">
           {{title}}
       </td>
-      <td v-if="edit">
-          <input type="text" v-model="title" v-bind="title">
-      </td>
-      <td v-if="edit">
-          <input type="number" v-model="price" v-bind="price">
+      <td v-if="!edit">
+          {{quantity}}
       </td>
       <td v-if="!edit">
           {{price}}
       </td>
+      
       <td v-if="edit">
+          <input type="text" v-model="title" v-bind="title">
+      </td>
+       <td v-if="edit">
           <input type="number" v-model="quantity" v-bind="quantity">
       </td>
-      <td v-if="!edit">
-          {{quantity}}
+      <td v-if="edit">
+          <input type="number" v-model="price" v-bind="price">
       </td>
+      
+     
+      
       
       <td v-if="!edit">
           <button @click="Torles">X</button> <button @click="Edit">Edit</button>
