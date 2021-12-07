@@ -17,22 +17,22 @@ export default {
         {
           title: 'Kerék',
           price: 100,
-          quality: 12
+          quantity: 12
         },
         {
           title: 'Teleszkóp',
           price: 1000,
-          quality: 300
+          quantity: 300
         },
         {
           title: 'Kormány',
           price: 230,
-          quality: 5
+          quantity: 5
         },
         {
           title: 'Ajtó',
           price: 45120,
-          quality: 321
+          quantity: 321
         },
       ]
     }

@@ -5,7 +5,7 @@
               <tr>
                   <th>Title</th>
                   <th>Price</th>
-                  <th>Quality</th>
+                  <th>quantity</th>
                   <th>Operations</th>
                   <th>Összérték</th>
                   
@@ -26,7 +26,7 @@
                     <input type="number" v-model="price">
                 </td>
                 <td>
-                    <input type="number" v-model="quality">
+                    <input type="number" v-model="quantity">
                 </td>
                 <td>
                     <button @click="Post"> Hozzáad </button>
@@ -48,19 +48,19 @@ export default {
         Changed(e){
             this.$emit('table-title-changed',e)
             this.$emit('table-price-changed',e)
-            this.$emit('table-quality-changed',e)
+            this.$emit('table-quantity-changed',e)
         },
         Post(){
               this.$emit('table-item-post', {
                 new:{
                     title:this.title,
                     price:this.price,
-                    quality:this.quality
+                    quantity:this.quantity
                 }
             })
             this.title="",
             this.price=null,
-            this.quality=null
+            this.quantity=null
         },
         Torles(e){
             this.$emit('table-item-torles', e)

@@ -4,7 +4,7 @@
           {{title}}
       </td>
       <td v-if="!edit">
-          {{quality}}
+          {{quantity}}
       </td>
       <td v-if="!edit">
           {{price}}
@@ -14,7 +14,7 @@
           <input type="text" v-model="title" v-bind="title">
       </td>
        <td v-if="edit">
-          <input type="number" v-model="quality" v-bind="quality">
+          <input type="number" v-model="quantity" v-bind="quantity">
       </td>
       <td v-if="edit">
           <input type="number" v-model="price" v-bind="price">
@@ -30,7 +30,7 @@
           <button @click="Save">Mentés</button>
       </td>
       <td v-if="!edit">
-          {{quality*price}}
+          {{quantity*price}}
       </td>
      
   </tr>
@@ -43,7 +43,7 @@ export default {
         return {
             title: this.row.title,
             price:this.row.price,
-            quality:this.row.quality,
+            quantity:this.row.quantity,
             edit:false
         }
     },
@@ -65,10 +65,10 @@ export default {
                     price: this.price
                 },
             }),
-            this.$emit("selected-quality-changed", {
+            this.$emit("selected-quantity-changed", {
                 original: this.row,
                 new: {
-                    quality: this.quality
+                    quantity: this.quantity
                 },
             })
         },
