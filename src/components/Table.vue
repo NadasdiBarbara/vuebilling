@@ -17,7 +17,7 @@
                 v-bind:key="row.title"
                 :row="row"
                 @selected-row-changed="Changed"
-                @selected-row-torles="Torles"
+                @table-item-torles="Torles"
                 />
                 <td>
                     <input type="text" v-model="title">
@@ -55,12 +55,12 @@ export default {
                 new:{
                     title:this.title,
                     price:this.price,
-                    quantity:this.quantity
+                    quality:this.quality
                 }
             })
             this.title="",
             this.price=null,
-            this.quantity=null
+            this.quality=null
         },
         Torles(e){
             this.$emit('table-item-torles', e)

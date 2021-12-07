@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Table :rows="rows" />
+    <Table :rows="rows"  @table-item-torles="Torles"  @selected-row-changed="Changed" @table-item-post="Post"/>
   </div>
 </template>
 
@@ -17,22 +17,22 @@ export default {
         {
           title: 'Kerék',
           price: 100,
-          quantity: 12
+          quality: 12
         },
         {
           title: 'Teleszkóp',
           price: 1000,
-          quantity: 300
+          quality: 300
         },
         {
           title: 'Kormány',
           price: 230,
-          quantity: 5
+          quality: 5
         },
         {
           title: 'Ajtó',
           price: 45120,
-          quantity: 321
+          quality: 321
         },
       ]
     }
